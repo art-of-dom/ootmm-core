@@ -11,6 +11,9 @@ RUN apt-get update \
     nodejs \
     npm \
     git \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -f /var/log/dpkg.log \
   && useradd -ms /bin/bash ootmm
 
 WORKDIR /app
